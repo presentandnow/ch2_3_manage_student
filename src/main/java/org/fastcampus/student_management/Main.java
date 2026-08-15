@@ -12,6 +12,8 @@ import org.fastcampus.student_management.ui.UserInputType;
 
 public class Main {
 
+  // -------------- 수강생 관리 프로그램 과제
+
   public static void main(String[] args) {
     StudentRepository studentRepository = new StudentRepository();
     CourseRepository courseRepository = new CourseRepository();

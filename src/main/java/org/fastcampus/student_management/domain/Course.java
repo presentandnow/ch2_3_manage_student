@@ -3,7 +3,7 @@ package org.fastcampus.student_management.domain;
 public class Course {
   private final Student student;
   private final String courseName;
-  private final int fee;
+  private int fee; // TODO :: 4. 과제 구현 부분 추가 - final 제거
   private final DayOfWeek dayOfWeek;
   private final Long courseTime;
 
@@ -46,4 +46,11 @@ public class Course {
   public Long getCourseTime() {
     return courseTime;
   }
+
+  // TODO: 4. 과제 구현 부분 추가
+  public void changeFee(int fee) {
+    this.fee = fee;
+  }
+
+
 }

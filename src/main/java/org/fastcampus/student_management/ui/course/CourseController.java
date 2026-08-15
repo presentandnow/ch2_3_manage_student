@@ -73,7 +73,7 @@ public class CourseController {
 
   private DayOfWeek getDayOfWeek() {
     while (true) {
-      coursePresenter.showInputDayOfWeek();
+      coursePresenter.showInputDayOfWeek(); // 수업 요일을 선택해주세요.
       try {
         return DayOfWeek.valueOf(scanner.nextLine().toUpperCase());
       } catch (IllegalArgumentException e) {

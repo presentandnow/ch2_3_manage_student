@@ -1,5 +1,6 @@
 package org.fastcampus.student_management.application.student;
 
+import javax.swing.text.html.Option;
 import org.fastcampus.student_management.application.student.dto.StudentInfoDto;
 import org.fastcampus.student_management.domain.Student;
 import org.fastcampus.student_management.repo.StudentRepository;
@@ -23,10 +24,18 @@ public class StudentService {
   }
 
   public void activateStudent(String name) {
-    // TODO: 과제 구현 부분
+    // TODO: 2. 과제 구현 부분
+    // 활성화
+    Student student = studentRepository.findByName(name)
+        .orElseThrow(() -> new IllegalArgumentException("해당하는 학생이 없습니다."));
+    student.changeActivated();
   }
 
   public void deactivateStudent(String name) {
-    // TODO: 과제 구현 부분
+    // TODO: 3. 과제 구현 부분
+    // 비활성화
+    Student student = studentRepository.findByName(name)
+        .orElseThrow(() -> new IllegalArgumentException("해당하는 학생이 없습니다."));
+    student.changeDeactivated();
   }
 }
