@@ -36,17 +36,28 @@ public class Student {
   // TODO :: 2. 과제 구현 부분 추가
   public void changeActivated() {
     // 활성화
-    if(!isActivate()) {
-      activated = true;
+    if(this.activated) {
+      throw new IllegalArgumentException();
+
     }
+
+    this.activated = true;
+//    if(!isActivate()) {
+//      activated = true;
+//    }
   }
 
   // TODO :: 3. 과제 구현 부분 추가
   public void changeDeactivated() {
     // 비활성화
-    if(isActivate()) {
-      activated = false;
+    if(!this.activated) {
+      throw new IllegalArgumentException();
     }
+
+    this.activated = false;
+//    if(isActivate()) {
+//      activated = false;
+//    }
   }
 
 }

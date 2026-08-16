@@ -3,7 +3,8 @@ package org.fastcampus.student_management.domain;
 public class Course {
   private final Student student;
   private final String courseName;
-  private int fee; // TODO :: 4. 과제 구현 부분 추가 - final 제거
+  //private int fee; // TODO :: 4. 과제 구현 부분 추가 - final 제거
+  private CourseFee fee; // 추가
   private final DayOfWeek dayOfWeek;
   private final Long courseTime;
 
@@ -14,7 +15,7 @@ public class Course {
 
     this.student = student;
     this.courseName = courseName;
-    this.fee = fee;
+    this.fee = new CourseFee(fee); // 추가
     this.dayOfWeek = dayOfWeek;
     this.courseTime = courseTime;
   }
@@ -36,7 +37,7 @@ public class Course {
   }
 
   public int getFee() {
-    return fee;
+    return this.fee.getFee();
   }
 
   public DayOfWeek getDayOfWeek() {
@@ -49,7 +50,8 @@ public class Course {
 
   // TODO: 4. 과제 구현 부분 추가
   public void changeFee(int fee) {
-    this.fee = fee;
+//    this.fee = fee;
+    this.fee.changeFee(fee);
   }
 
 
